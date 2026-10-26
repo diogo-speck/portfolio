@@ -1,0 +1,184 @@
+# ============================================================
+# CONFIGURAÇÃO GERAL
+# ============================================================
+
+title = "Diogo Speck | Portfólio"
+baseURL = "https://diogo-speck.github.io/portfolio/"
+enableRobotsTXT = true
+
+defaultContentLanguage = "pt-br"
+defaultContentLanguageInSubdir = false
+
+# ============================================================
+# TEMA BILBERRY
+# ============================================================
+
+
+[module]
+  [[module.imports]]
+    path = "bilberry-hugo-theme/v4"
+
+  # Preserva os arquivos estáticos normais do Hugo
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+  # Inclui os projetos sem mover seus diretórios originais
+  [[module.mounts]]
+    source = "adventure-time"
+    target = "static/adventure-time"
+
+  [[module.mounts]]
+    source = "confitto"
+    target = "static/confitto"
+
+
+# ============================================================
+# CONFIGURAÇÕES DO SITE
+# ============================================================
+
+[params]
+  # Identidade
+  authorName = "Diogo Speck"
+  authorEmail = "diogospeck@gmail.com"
+
+  description = "Portfólio de Diogo Speck: projetos de programação, desenvolvimento de software e tecnologia."
+  keywords = "Diogo Speck, portfolio, portfólio, programação, Python, C++, Java, desenvolvimento"
+
+  # Recursos gerais
+  css_modules = []
+  js_modules = []
+
+  paginate = 7
+  enable_mathjax = false
+
+  # Busca
+  algolia_search = false
+
+  # Comentários
+  giscus = false
+  utterances = false
+
+  # Imagens
+  resizeImages = true
+  customImage = "perfilFoto.jpeg"
+  avatarEmail = ""
+  overlayIcon = "fa-home"
+
+  # Navegação
+  permanentTopNav = false
+  stickyNav = false
+  showHeaderLanguageChooser = true
+
+  # Conteúdo
+  enableMomentJs = true
+  dateFormat = "2006-01-02"
+  showReadingTime = false
+  tocMinWordCount = 400
+
+  # Rodapé
+  showFooter = true
+  amountLatestPostsInFooter = 7
+  amountCategoriesInFooter = 7
+  showFooterLanguageChooser = true
+  showArchive = true
+  archiveDateGrouping = "2006-01"
+
+  # Redes sociais
+  showSocialMedia = true
+
+  socialMediaLinks = [
+    { link = "https://github.com/diogo-speck", icon = "fab fa-github" },
+    { link = "https://www.linkedin.com/in/diogo-fernando-speck/", icon = "fab fa-linkedin" },
+  ]
+
+  # Créditos
+  copyrightBy = "Diogo Speck"
+  copyrightUseCurrentYear = true
+  copyrightUrl = "https://diogo-speck.github.io/portfolio/"
+
+  creditsText = "Bilberry Hugo Theme"
+  creditsUrl = "https://github.com/Lednerb/bilberry-hugo-theme"
+
+# ============================================================
+# IDIOMAS
+# Português: idioma principal, na raiz do site.
+# English: available on subdir /en/.
+# ============================================================
+
+[languages]
+
+  [languages.pt-br]
+    languageName = "Português"
+    languageCode = "pt-BR"
+    weight = 1
+    title = "Diogo Speck | Portfólio"
+
+    [languages.pt-br.params]
+      subtitle = "Programação, tecnologia e desenvolvimento de software"
+
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-US"
+    weight = 2
+    title = "Diogo Speck | Portfolio"
+
+    [languages.en.params]
+      subtitle = "Programming, technology and software development"
+
+# ============================================================
+# GOOGLE ANALYTICS
+# ============================================================
+
+[services]
+  [services.googleAnalytics]
+    ID = ""
+
+# ============================================================
+# MARKDOWN E FORMATAÇÃO
+# ============================================================
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    hl_inline = false
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = "monokai"
+    tabWidth = 4
+
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 2
+
+# ============================================================
+# TAXONOMIAS
+# ============================================================
+
+[taxonomies]
+  author = "Diogo Speck"
+  tag = ""
+  category = "Computer Science"
+  series = ""
+
+# ============================================================
+# FORMATOS DE SAÍDA
+# ============================================================
+
+[outputs]
+  home = ["HTML", "JSON", "RSS"]
+  page = ["HTML"]
